@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C018D8432087625E000C8D63 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D8422087625E000C8D63 /* ItemDetailViewController.swift */; };
 		C02F6BB02083081A0045E3CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6BAF2083081A0045E3CD /* AppDelegate.swift */; };
 		C02F6BB52083081A0045E3CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02F6BB32083081A0045E3CD /* Main.storyboard */; };
 		C02F6BB72083081A0045E3CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02F6BB62083081A0045E3CD /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C018D8422087625E000C8D63 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		C02F6BAC2083081A0045E3CD /* OurLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02F6BAF2083081A0045E3CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C02F6BB42083081A0045E3CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				C02F6BB32083081A0045E3CD /* Main.storyboard */,
 				C02F6BC12083962F0045E3CD /* ListsViewController.swift */,
 				C02F6BC720841C840045E3CD /* ListItemsViewController.swift */,
+				C018D8422087625E000C8D63 /* ItemDetailViewController.swift */,
 				C02F6BC3208414B00045E3CD /* List.swift */,
 				C02F6BC5208419630045E3CD /* Item.swift */,
 				C02F6BB62083081A0045E3CD /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			files = (
 				C02F6BC6208419630045E3CD /* Item.swift in Sources */,
 				C02F6BC22083962F0045E3CD /* ListsViewController.swift in Sources */,
+				C018D8432087625E000C8D63 /* ItemDetailViewController.swift in Sources */,
 				C02F6BC820841C840045E3CD /* ListItemsViewController.swift in Sources */,
 				C02F6BB02083081A0045E3CD /* AppDelegate.swift in Sources */,
 				C02F6BC4208414B00045E3CD /* List.swift in Sources */,

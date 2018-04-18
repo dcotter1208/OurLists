@@ -10,8 +10,11 @@ import UIKit
 
 class ListItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var itemsTableView: UITableView!
+    
     var items = [ListItem]()
     private let itemCellIdentifier = "ItemCellIdentifier"
+    private let itemCellSegue = "ItemCellSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,11 @@ class ListItemsViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        guard let itemDetailVC = segue.destination as? ItemDetailViewController else { return }
+        
+        if segue.identifier == itemCellSegue {
+            guard let indexPath = itemsTableView.indexPathForSelectedRow else { return }
+            itemDetailVC.item = items[indexPath.row]
+        }
     }
-
 }

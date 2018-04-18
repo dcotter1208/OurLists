@@ -20,7 +20,7 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.listTableview.reloadData()
     }
 
-    //This is just place holder functionality.
+    //This is just place holder d
     private func loadLists() {
         let item1 = Item(name: "grapes")
         let item2 = Item(name: "apples")
@@ -46,10 +46,9 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = listTableview.indexPathForSelectedRow,
-              let listItemsViewController = segue.destination as? ListItemsViewController,
-              let items = lists[indexPath.row] as? Array<ListItem> else { return }
-        
-        listItemsViewController.items = items
+              let listItemsViewController = segue.destination as? ListItemsViewController else { return }
+
+        listItemsViewController.items = lists[indexPath.row].items
      }
 
 }
