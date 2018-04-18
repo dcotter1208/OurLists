@@ -10,7 +10,7 @@ import UIKit
 
 class ListItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var items: Array<ListItem>? = nil
+    var items = [ListItem]()
     private let itemCellIdentifier = "ItemCellIdentifier"
     
     override func viewDidLoad() {
@@ -19,15 +19,12 @@ class ListItemsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let itemsCount = items?.count {
-            return itemsCount
-        }
-        return 0
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier, for: indexPath)
-        let item = items![indexPath.row]
+        let item = items[indexPath.row]
         cell.textLabel?.text = "\(item.name): \(item.amount)"
         return cell
     }

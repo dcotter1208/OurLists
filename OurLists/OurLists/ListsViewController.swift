@@ -46,7 +46,8 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = listTableview.indexPathForSelectedRow,
             let listItemsViewController = segue.destination as? ListItemsViewController else { return }
-        listItemsViewController.items = lists[indexPath.row] as! Array<ListItem>
+        
+        listItemsViewController.items = lists[indexPath.row] as? Array<ListItem>
      }
 
 }
