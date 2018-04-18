@@ -40,14 +40,16 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: listCellIdentifier, for: indexPath) as UITableViewCell
         let list = self.lists[indexPath.row]
         cell.textLabel?.text = list.name
+        
         return cell
     }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = listTableview.indexPathForSelectedRow,
-            let listItemsViewController = segue.destination as? ListItemsViewController else { return }
+              let listItemsViewController = segue.destination as? ListItemsViewController,
+              let items = lists[indexPath.row] as? Array<ListItem> else { return }
         
-        listItemsViewController.items = lists[indexPath.row] as? Array<ListItem>
+        listItemsViewController.items = items
      }
 
 }

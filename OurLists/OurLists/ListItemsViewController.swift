@@ -26,6 +26,7 @@ class ListItemsViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier, for: indexPath)
         let item = items[indexPath.row]
         cell.textLabel?.text = "\(item.name): \(item.amount)"
+        
         return cell
     }
 
