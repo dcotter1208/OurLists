@@ -8,28 +8,45 @@
 
 import UIKit
 
-class ListsViewController: UIViewController {
+class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var listTableview: UITableView!
+    private var lists = [PlaceList]()
+    private let listCellIdentifier = "ListCellIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadLists()
+        self.listTableview.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //This is just place holder functionality.
+    private func loadLists() {
+        let item1 = Item(name: "grapes")
+        let item2 = Item(name: "apples")
+        let item3 = Item(name: "carrots")
+        let item4 = Item(name: "hummus")
+        let item5 = Item(name: "buns")
+        
+        let list1 = List(name: "Kroger", items: [item1, item2, item3, item4, item5])
+        self.lists = [list1]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.lists.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: listCellIdentifier, for: indexPath) as UITableViewCell
+        let list = self.lists[indexPath.row]
+        cell.textLabel?.text = list.name
+        return cell
+    }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = listTableview.indexPathForSelectedRow,
+            let listItemsViewController = segue.destination as? ListItemsViewController else { return }
+        listItemsViewController.items = lists[indexPath.row] as! Array<ListItem>
+     }
 
 }

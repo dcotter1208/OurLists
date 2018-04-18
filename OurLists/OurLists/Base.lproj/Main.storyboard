@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="amh-nU-dSr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCellIdentifier" rowHeight="71" id="amh-nU-dSr">
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amh-nU-dSr" id="I8c-6Z-zDt">
@@ -30,10 +30,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="82R-A9-JXC" kind="show" id="AuB-LT-GDV"/>
+                                            <segue destination="82R-A9-JXC" kind="showDetail" action="showViewController:sender:" id="AuB-LT-GDV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ne2-79-lrP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4wL-gX-J6a"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,24 +52,30 @@
                     <navigationItem key="navigationItem" id="DtU-wN-D2G">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dN2-QC-86w"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="listTableview" destination="8ku-BY-dEH" id="Q0Y-bt-R20"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="455.19999999999999" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--List Items View Controller-->
         <scene sceneID="YTn-PD-fq9">
             <objects>
-                <viewController id="82R-A9-JXC" sceneMemberID="viewController">
+                <viewController id="82R-A9-JXC" customClass="ListItemsViewController" customModule="OurLists" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55e-Qc-V5a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-aA-zNR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-aA-zNR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="559" id="HXE-4w-KHZ"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="e4a-il-WHf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCellIdentifier" rowHeight="44" id="e4a-il-WHf">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e4a-il-WHf" id="y6P-Hq-taw">
@@ -74,10 +84,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="82R-A9-JXC" id="IIh-4C-HbT"/>
+                                    <outlet property="delegate" destination="82R-A9-JXC" id="ezO-4b-BmS"/>
+                                </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmw-hJ-blI">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmw-hJ-blI">
+                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Clear List" id="ic7-bG-tSM"/>
                                     <barButtonItem width="157" style="plain" systemItem="fixedSpace" id="igk-MY-Tep"/>
@@ -88,8 +101,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="r0C-aA-zNR" firstAttribute="leading" secondItem="55e-Qc-V5a" secondAttribute="leading" id="Jc6-Ry-aqF"/>
+                            <constraint firstItem="r0C-aA-zNR" firstAttribute="bottom" secondItem="xmw-hJ-blI" secondAttribute="top" id="p6C-Jd-Pve"/>
                             <constraint firstItem="r0C-aA-zNR" firstAttribute="top" secondItem="XMd-hz-4dT" secondAttribute="top" id="rr8-4P-XcY"/>
+                            <constraint firstItem="r0C-aA-zNR" firstAttribute="leading" secondItem="xmw-hJ-blI" secondAttribute="leading" id="us1-yQ-wem"/>
                             <constraint firstAttribute="trailing" secondItem="r0C-aA-zNR" secondAttribute="trailing" id="yEb-Hc-bAj"/>
+                            <constraint firstItem="r0C-aA-zNR" firstAttribute="trailing" secondItem="xmw-hJ-blI" secondAttribute="trailing" id="zKF-Le-ufp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XMd-hz-4dT"/>
                     </view>

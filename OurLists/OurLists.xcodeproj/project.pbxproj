@@ -14,6 +14,7 @@
 		C02F6BC22083962F0045E3CD /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6BC12083962F0045E3CD /* ListsViewController.swift */; };
 		C02F6BC4208414B00045E3CD /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6BC3208414B00045E3CD /* List.swift */; };
 		C02F6BC6208419630045E3CD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6BC5208419630045E3CD /* Item.swift */; };
+		C02F6BC820841C840045E3CD /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6BC720841C840045E3CD /* ListItemsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C02F6BC12083962F0045E3CD /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
 		C02F6BC3208414B00045E3CD /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		C02F6BC5208419630045E3CD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C02F6BC720841C840045E3CD /* ListItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,10 @@
 			children = (
 				C02F6BAF2083081A0045E3CD /* AppDelegate.swift */,
 				C02F6BB32083081A0045E3CD /* Main.storyboard */,
+				C02F6BC12083962F0045E3CD /* ListsViewController.swift */,
+				C02F6BC720841C840045E3CD /* ListItemsViewController.swift */,
 				C02F6BC3208414B00045E3CD /* List.swift */,
 				C02F6BC5208419630045E3CD /* Item.swift */,
-				C02F6BC12083962F0045E3CD /* ListsViewController.swift */,
 				C02F6BB62083081A0045E3CD /* Assets.xcassets */,
 				C02F6BB82083081A0045E3CD /* LaunchScreen.storyboard */,
 				C02F6BBB2083081A0045E3CD /* Info.plist */,
@@ -144,6 +147,7 @@
 			files = (
 				C02F6BC6208419630045E3CD /* Item.swift in Sources */,
 				C02F6BC22083962F0045E3CD /* ListsViewController.swift in Sources */,
+				C02F6BC820841C840045E3CD /* ListItemsViewController.swift in Sources */,
 				C02F6BB02083081A0045E3CD /* AppDelegate.swift in Sources */,
 				C02F6BC4208414B00045E3CD /* List.swift in Sources */,
 			);
