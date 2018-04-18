@@ -48,7 +48,7 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard let indexPath = listTableview.indexPathForSelectedRow,
               let listItemsViewController = segue.destination as? ListItemsViewController else { return }
 
-        listItemsViewController.items = lists[indexPath.row].items
+        listItemsViewController.list = lists[indexPath.row] as? List
      }
 
 }

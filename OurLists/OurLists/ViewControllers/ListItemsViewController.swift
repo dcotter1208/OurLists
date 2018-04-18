@@ -12,7 +12,7 @@ class ListItemsViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var itemsTableView: UITableView!
     
-    var items = [ListItem]()
+    var list: List? = nil
     private let itemCellIdentifier = "ItemCellIdentifier"
     private let itemCellSegue = "ItemCellSegue"
     
@@ -22,13 +22,17 @@ class ListItemsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        if let items = list?.items {
+            return items.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier, for: indexPath)
-        let item = items[indexPath.row]
-        cell.textLabel?.text = "\(item.name): \(item.amount)"
+        if let item = list?.items[indexPath.row] {
+            cell.textLabel?.text = "\(item.name): \(item.amount)"
+        }
         
         return cell
     }
@@ -38,8 +42,20 @@ class ListItemsViewController: UIViewController, UITableViewDataSource, UITableV
         guard let itemDetailVC = segue.destination as? ItemDetailViewController else { return }
         
         if segue.identifier == itemCellSegue {
-            guard let indexPath = itemsTableView.indexPathForSelectedRow else { return }
+            guard let indexPath = itemsTableView.indexPathForSelectedRow,
+                  let items = list?.items else { return }
+            
             itemDetailVC.item = items[indexPath.row]
         }
     }
+    
+    @IBAction func previousItems(_ sender: Any) {
+        
+    }
+    
+    @IBAction func clearList(_ sender: Any) {
+        list?.clear()
+        itemsTableView.reloadData()
+    }
+    
 }

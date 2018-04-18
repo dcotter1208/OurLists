@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C018D8432087625E000C8D63 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D8422087625E000C8D63 /* ItemDetailViewController.swift */; };
+		C018D84720880C82000C8D63 /* PreviousItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D84620880C82000C8D63 /* PreviousItemsViewController.swift */; };
+		C018D84920880DF6000C8D63 /* PreviousItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D84820880DF6000C8D63 /* PreviousItemCell.swift */; };
 		C02F6BB02083081A0045E3CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6BAF2083081A0045E3CD /* AppDelegate.swift */; };
 		C02F6BB52083081A0045E3CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02F6BB32083081A0045E3CD /* Main.storyboard */; };
 		C02F6BB72083081A0045E3CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02F6BB62083081A0045E3CD /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		C018D8422087625E000C8D63 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		C018D84620880C82000C8D63 /* PreviousItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousItemsViewController.swift; sourceTree = "<group>"; };
+		C018D84820880DF6000C8D63 /* PreviousItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousItemCell.swift; sourceTree = "<group>"; };
 		C02F6BAC2083081A0045E3CD /* OurLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02F6BAF2083081A0045E3CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C02F6BB42083081A0045E3CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +47,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C018D84A20880E03000C8D63 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C018D84820880DF6000C8D63 /* PreviousItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C018D84B20880E0F000C8D63 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C02F6BC12083962F0045E3CD /* ListsViewController.swift */,
+				C02F6BC720841C840045E3CD /* ListItemsViewController.swift */,
+				C018D8422087625E000C8D63 /* ItemDetailViewController.swift */,
+				C018D84620880C82000C8D63 /* PreviousItemsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C018D84C20880E19000C8D63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C02F6BC3208414B00045E3CD /* List.swift */,
+				C02F6BC5208419630045E3CD /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C02F6BA32083081A0045E3CD = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +96,9 @@
 			children = (
 				C02F6BAF2083081A0045E3CD /* AppDelegate.swift */,
 				C02F6BB32083081A0045E3CD /* Main.storyboard */,
-				C02F6BC12083962F0045E3CD /* ListsViewController.swift */,
-				C02F6BC720841C840045E3CD /* ListItemsViewController.swift */,
-				C018D8422087625E000C8D63 /* ItemDetailViewController.swift */,
-				C02F6BC3208414B00045E3CD /* List.swift */,
-				C02F6BC5208419630045E3CD /* Item.swift */,
+				C018D84B20880E0F000C8D63 /* ViewControllers */,
+				C018D84C20880E19000C8D63 /* Model */,
+				C018D84A20880E03000C8D63 /* Cells */,
 				C02F6BB62083081A0045E3CD /* Assets.xcassets */,
 				C02F6BB82083081A0045E3CD /* LaunchScreen.storyboard */,
 				C02F6BBB2083081A0045E3CD /* Info.plist */,
@@ -149,9 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02F6BC6208419630045E3CD /* Item.swift in Sources */,
+				C018D84720880C82000C8D63 /* PreviousItemsViewController.swift in Sources */,
 				C02F6BC22083962F0045E3CD /* ListsViewController.swift in Sources */,
 				C018D8432087625E000C8D63 /* ItemDetailViewController.swift in Sources */,
 				C02F6BC820841C840045E3CD /* ListItemsViewController.swift in Sources */,
+				C018D84920880DF6000C8D63 /* PreviousItemCell.swift in Sources */,
 				C02F6BB02083081A0045E3CD /* AppDelegate.swift in Sources */,
 				C02F6BC4208414B00045E3CD /* List.swift in Sources */,
 			);
