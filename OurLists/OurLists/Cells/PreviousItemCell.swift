@@ -21,4 +21,9 @@ class PreviousItemCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func editItem(_ sender: Any) {
+        print("*EDITING ITEM*")
+    }
+    
+    
 }
